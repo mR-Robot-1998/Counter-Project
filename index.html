@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	body{
+			text-align:center;
+            }
+    .plus,.reset,.mines{
+    		font-size:40px;
+            }
+	.counter{
+    		font-size:30px;        
+</style>
+</head>
+<body>
+<h1 id="title">Project Counter</h1>
+<button class='plus'>+</button>
+<button class='reset'>Reset</button>
+<button class='mines'>-</button>
+<p class='counter'>Counter </p>
+
+<script type='text/Javascript'>
+	let inc=document.querySelector('.plus');
+    let mines=document.querySelector('.mines');
+    const reset=document.querySelector('.reset');
+    
+    
+    let count=0;
+    let counter=document.querySelector('.counter')
+    
+    ////about for incc function for counter
+    
+    function incc(){
+    	count++;
+        if(count > 0){
+        	counter.style.color='green'
+        }
+        counter.innerHTML=`Counter ${count}`;
+    }
+    inc.addEventListener("click",incc)
+    
+    ////about for inss function for counter
+    function inss(){
+    	count--;
+        if (count < 0 ){
+        	counter.style.color='red';
+        }
+        counter.innerHTML=`Counter ${count}`
+       }
+    mines.addEventListener("click",inss)
+    
+    
+    /// about for reset function for counter 
+
+     function resetCount(){
+     	count = 0;
+        counter.innerHTML=`Counter ${count}`
+     }
+     
+     reset.addEventListener("click",resetCount);
+     
+</script>
+
+</body>
+</html>
+    
